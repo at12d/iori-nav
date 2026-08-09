@@ -591,6 +591,11 @@ export async function onRequest(context) {
   // 压缩标签间空白，减小 HTML 体积（项目无 <pre>/<textarea>，安全）
   html = html.replace(/>\s+</g, '><');
 
+  // === 修改顶部“博客”链接文字与 URL ===
+  <a href="https://bk0.at8.ccwu.cc/" target="_blank" class="nav-item">
+  <i class="iconfont icon-link"></i> 友情链接
+</a>
+  
   // === 17. 返回响应 ===
   const response = new Response(html, {
     headers: {
